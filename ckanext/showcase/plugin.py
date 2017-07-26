@@ -145,16 +145,16 @@ class ShowcasePlugin(plugins.SingletonPlugin, lib_plugins.DefaultDatasetForm):
             m.connect('ckanext_showcase_delete', '/showcase/delete/{id}',
                       action='delete')
             m.connect('ckanext_showcase_read', '/showcase/{id}', action='read',
-                      ckan_icon='picture')
+                      ckan_icon='picture-o')
             m.connect('ckanext_showcase_edit', '/showcase/edit/{id}',
                       action='edit', ckan_icon='edit')
             m.connect('ckanext_showcase_manage_datasets',
                       '/showcase/manage_datasets/{id}',
                       action="manage_datasets", ckan_icon="sitemap")
             m.connect('dataset_showcase_list', '/dataset/showcases/{id}',
-                      action='dataset_showcase_list', ckan_icon='picture')
+                      action='dataset_showcase_list', ckan_icon='picture-o')
             m.connect('ckanext_showcase_admins', '/ckan-admin/showcase_admins',
-                      action='manage_showcase_admins', ckan_icon='picture'),
+                      action='manage_showcase_admins', ckan_icon='picture-o'),
             m.connect('ckanext_showcase_admin_remove',
                       '/ckan-admin/showcase_admin_remove',
                       action='remove_showcase_admin')
