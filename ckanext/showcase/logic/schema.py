@@ -17,6 +17,7 @@ from ckan.logic.schema import (default_tags_schema,
                                default_resource_schema)
 
 from ckanext.showcase.logic.validators import (
+    convert_package_name_or_id_to_id_for_type,
     convert_package_name_or_id_to_id_for_type_dataset,
     convert_package_name_or_id_to_id_for_type_showcase)
 
