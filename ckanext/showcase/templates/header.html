@@ -1,9 +1,10 @@
 {% ckan_extends %}
 
 {% block header_site_navigation_tabs %}
-  <li><a href="{{ h.url_for('search') }}">{{ _('Datasets') }}</a></li>
-  <li><a href="{{ h.url_for('organizations_index') }}">{{ _('Organizations') }}</a></li>
-  <li><a href="{{ h.url_for('ckanext_showcase_index') }}">{{ _('Showcases') }}</a></li>
-  <li><a href="{{ h.url_for('pages_show', page='/api') }}">{{ _('API') }}</a></li>
-  <li><a href="{{ h.url_for('about') }}">{{ _('About') }}</a></li>
+  {% set current_page = c.environ['routes.url'].current().split('/')[-1] %}
+  <li{% if current_page == 'dataset' %} class="active"{% endif %}><a href="{{ h.url_for('search') }}">{{ _('Datasets') }}</a></li>
+  <li{% if current_page == 'organization' %} class="active"{% endif %}><a href="{{ h.url_for('organizations_index') }}">{{ _('Organizations') }}</a></li>
+  <li{% if current_page == 'showcase' %} class="active"{% endif %}><a href="{{ h.url_for('ckanext_showcase_index') }}">{{ _('Showcases') }}</a></li>
+  <li{% if current_page == 'api' %} class="active"{% endif %}><a href="{{ h.url_for('pages_show', page='/api') }}">{{ _('API') }}</a></li>
+  <li{% if current_page == 'about' %} class="active"{% endif %}><a href="{{ h.url_for('about') }}">{{ _('About') }}</a></li>
 {% endblock %}
